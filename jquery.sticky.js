@@ -17,6 +17,7 @@
   var defaults = {
       topSpacing: 0,
       bottomSpacing: 0,
+      offsetTop:0,
       className: 'is-sticky',
       wrapperClassName: 'sticky-wrapper',
       center: false,
@@ -37,7 +38,7 @@
       for (var i = 0; i < sticked.length; i++) {
         var s = sticked[i],
           elementTop = s.stickyWrapper.offset().top,
-          etse = elementTop - s.topSpacing - extra;
+          etse = elementTop - s.topSpacing - extra - s.offsetTop;
 
 	//update height in case of dynamic content
 	s.stickyWrapper.css('height', s.stickyElement.outerHeight());
